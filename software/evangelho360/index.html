@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+    <title>HTML - Teste Storage - Home (Com JQuery)</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+      $(document).ready(function(){
+        console.log("---------- Inicio do index.html -----------");
+        var user = "FNivaldo";  
+
+        if (typeof(Storage) !== "undefined") {
+          console.log("Code for localStorage/sessionStorage...");
+          sessionStorage.setItem("nomeUser", user);
+        } else {
+          console.log("Sorry! No Web Storage support...");
+        }
+
+        console.log("Executou o documento.ready...");
+        console.log("user: " + user);
+
+        $("#nomeUser").text(user);
+      }); 
+    </script>
+  </head>
+
+  <body>
+    <a href="principal.html">Vai o a principal.html</a>
+    <div id="nomeUser">Usuario...</div>
+    <!-- <button type="button" onclick="page1.html">Vai para o page1</button> -->
+  </body>
+
+</html> 
