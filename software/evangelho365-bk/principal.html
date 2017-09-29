@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+    <title>PPRINCIPAL - Teste Storage - Home (Com JQuery)</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+      $(document).ready(function(){
+        console.log("---------- Inicio do page1.html -----------");
+        console.log("Executou o documento.ready do page1...");
+        console.log("user: " + user);
+        var user = sessionStorage.nomeUser;
+        console.log("user: " + user);
+        
+        $("#nomeUser").text(user);
+      }); 
+    </script>
+  </head>
+
+  <body>
+    <a href="index.html">Vai o a index.html</a>
+    <div id="nomeUser">Usuario...</div>
+    <!-- <button type="button" onclick="index.html">Vai para o html</button> -->
+  </body>
+
+</html> 
