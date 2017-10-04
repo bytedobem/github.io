@@ -1,6 +1,6 @@
 
 $(document).ready(function(){
-
+    
     //**-- Decodifica os parametros da URL --**
     //**-------------------------------------**
 
