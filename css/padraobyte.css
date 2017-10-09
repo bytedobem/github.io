@@ -1,0 +1,125 @@
+
+body {
+      background-color: #F7F7F7;
+}
+
+.noClass {
+
+}
+
+#corpoPagina {
+      padding-top: 80px;
+      padding-bottom: 100px;
+}
+
+/* ======================================================================
+                    Configuração de cor do NAVBAR      
+=======================================================================*/
+
+.navbar-default {
+  background-color: #55ACEE;
+  border-color: #55ACEE;
+}
+.navbar-default .navbar-brand {
+  color: #FFFFFF;
+}
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+  color: #292F33;
+}
+.navbar-default .navbar-text {
+  color: #292F33;
+}
+.navbar-default .navbar-nav > li > a {
+  color: #FFFFFF;
+}
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+  color: #292F33;
+  background-color: #F7F7F7;              
+}
+
+.ativado {
+  color: #292F33;                      
+  background-color: #00A1F1;            
+  font-weight: bold; 
+  letter-spacing: 1px; 
+}
+
+/*
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+  color: #000FFF;                      
+  background-color: #ABCDE0;            
+  font-weight: bold;  
+}
+
+
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > a:focus {
+  color: #292F33;
+  background-color: #55ACEE;           
+}
+*/
+.navbar-default .navbar-toggle {
+  border-color: #55ACEE;
+}
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+  background-color: #55ACEE;     
+}
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #FFFFFF;
+}
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+  border-color: #FFFFFF;
+}
+.navbar-default .navbar-link {
+  color: #FFFFFF;
+}
+.navbar-default .navbar-link:hover {
+  color: #292F33;
+}
+
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: #FFFFFF;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #292F33;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a,
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #292F33;
+    background-color: #00A1F1;                    
+  }
+}
+
+/* ======================================================================
+                               LOADER
+=======================================================================*/
+
+.loader {
+  border: 6px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 6px solid #3498db;
+  width: 40px;
+  height: 40px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

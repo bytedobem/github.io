@@ -10,8 +10,10 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-        <link rel="stylesheet" href="css/IMCcalc.css">
-        <script src="js/IMCcalc.js"></script>
+        <link rel="stylesheet" href="../../css/padraobyte.css">
+        <link rel="stylesheet" href="css/imccalc.css">
+        <script src="../../js/padraobyte.js"></script>
+        <script src="js/imccalc.js"></script>
 
     </head>
     <body>
@@ -19,8 +21,10 @@
         <!-- ===============================================================================
                                              CABEÇALHO
         ================================================================================ -->
-
+        <!--
         <nav class="navbar navbar-default navbar-fnt navbar-backgrnd navbar-fixed-top">
+        -->
+            <nav class="navbar navbar-default navbar-fixed-top">
             <div class="container-fluid">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -32,13 +36,10 @@
                 </div>
                 <div class="collapse navbar-collapse" id="myNavbar">
                     <ul class="nav navbar-nav">
-                        <!--
-                        <li class="active"><a href="index.html">Calculo</a></li>
-                        -->
-                        <li><a href="index.html">Calculo</a></li>
-                        <li><a href="index.html?page=ajuda">Ajuda</a></li>
-                        <li><a href="index.html?page=sobre">Sobre</a></li>
-                        <li><a href="index.html?page=contato">Contato</a></li>
+                        <li><a class="noClass" id="menu_calculo" href="index.html">Calculo</a></li>
+                        <li><a class="noClass" id="menu_info" href="index.html?page=info">Info</a></li>
+                        <li><a class="noClass" id="menu_contato" href="index.html?page=contato">Contato</a></li>
+                        <li><a class="noClass" id="menu_sobre" href="index.html?page=sobre">Sobre</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="../../index.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
@@ -68,10 +69,10 @@
                                          CORPO DA PAGINA
         =============================================================================== -->
     
-        <div class="container-fluid text-center" id="corpoPagina">
-            <div class="loader"></div>
+        <div class="container-fluid" id="corpoPagina">
+            <div class="loader center-block"></div>
         </div>
-    
+
         <!-- ===============================================================================
                                            BIBLIOTECA
         =============================================================================== -->
