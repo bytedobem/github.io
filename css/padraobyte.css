@@ -12,6 +12,30 @@ body {
       padding-bottom: 100px;
 }
 
+
+
+
+        .texto-salmon {
+            color: salmon;
+        }
+        .texto-white {
+            color: white;
+        }
+        .fundo-darkblue {
+            background-color: darkblue;
+        }
+        .fundo-blue {
+            background-color: blue;
+        }
+        .fundo-orange {
+            background-color: orange;
+        }
+        .fundo-magenta {
+            background-color: magenta;
+        }
+
+
+
 /* ======================================================================
                     Configuração de cor do NAVBAR      
 =======================================================================*/
