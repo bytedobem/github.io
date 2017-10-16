@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS/JS e JQuery -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <!--
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+        -->
+        <meta name="google-signin-client_id" content="296707453684-69nvprqosvpf2nr3tmt1sqnjkp7ienic.apps.googleusercontent.com">
+
+        <!--
+        <meta name="google-signin-client_id" content="YOUR_CLIENT_ID.apps.googleusercontent.com">
+        -->
+        <link rel="stylesheet" href="css/padraobyte.css">
+        <link rel="stylesheet" href="css/login.css">
+        <script src="js/padraobyte.js"></script>
+        <script src="js/login.js"></script>
+
+        <!-- <script src="https://apis.google.com/js/platform.js" async defer></script> 
+        <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
+-->
+
+    </head>
+    <body>
+
+        <!-- ===============================================================================
+                                             CABEÇALHO
+        ================================================================================ -->
+        <!--
+        <nav class="navbar navbar-default navbar-fnt navbar-backgrnd navbar-fixed-top">
+        -->
+            <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" id="setaRetorno" href="window.history.back()">
+                        <span class="glyphicon glyphicon-menu-left"></span>
+                    </a>
+                    <a class="navbar-brand" href="#" id="tituloLogin">
+                        Login
+                    </a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- ===============================================================================
+                                         CORPO DA PAGINA
+        =============================================================================== -->
+    
+        <div class="container" id="corpoPagina">
+            <div class="box-login">
+                <h2>Login</h2>
+        
+                <div id="my-signin2"></div>
+                <br>
+                <img src="#" id="userImageURL">
+                <br>
+                <a href="#" onclick="signOut();">Logout</a>
+
+            </div>
+        </div>
+
+
+
+        <!-- ===============================================================================
+                                            RODAPE
+        =============================================================================== -->
+
+        <nav class="navbar navbar-default navbar-fixed-bottom">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">ByteDoBem</a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Botao de Login do Google -->
+        <script src="js/login-render.js"></script>
+        <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
+
+    </body>
+</html>

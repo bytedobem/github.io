@@ -16,22 +16,22 @@ body {
 
 
         .texto-salmon {
-            color: salmon;
+            color: #ff7f65;
         }
         .texto-white {
-            color: white;
+            color: #ffffff;
         }
         .fundo-darkblue {
-            background-color: darkblue;
+            background-color: #00648e;
         }
         .fundo-blue {
-            background-color: blue;
+            background-color: #64c1c7;
         }
         .fundo-orange {
-            background-color: orange;
+            background-color: #F88246;
         }
         .fundo-magenta {
-            background-color: magenta;
+            background-color: #ca404c;
         }
 
 
