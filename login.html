@@ -38,12 +38,10 @@
             <nav class="navbar navbar-default navbar-fixed-top">
             <div class="container-fluid">
                 <div class="navbar-header">
-                    <a class="navbar-brand" id="setaRetorno" href="window.history.back()">
+                    <a class="navbar-brand" id="setaRetorno" href="#">
                         <span class="glyphicon glyphicon-menu-left"></span>
                     </a>
-                    <a class="navbar-brand" href="#" id="tituloLogin">
-                        Login
-                    </a>
+                    <div class="navbar-brand" id="tituloLogin">Login</div>
                 </div>
             </div>
         </nav>
@@ -51,21 +49,59 @@
         <!-- ===============================================================================
                                          CORPO DA PAGINA
         =============================================================================== -->
-    
+ 
+        <!--
         <div class="container" id="corpoPagina">
-            <div class="box-login">
-                <h2>Login</h2>
-        
+            <div class="box-login text-center">
+                <h5><strong>LOGIN UTILIZANDO CONTA GOOGLE</strong></h5>
+                <br>
                 <div id="my-signin2"></div>
-                <br>
-                <img src="#" id="userImageURL">
-                <br>
-                <a href="#" onclick="signOut();">Logout</a>
-
+                <br><br>
+                <button type="button" class="btn btn-danger btn-lg btn-block" id="btn-logout">Logout</button>
+                <a class="btn btn-success btn-lg btn-block" id="btn-voltar" href="#">Voltar</a>
             </div>
         </div>
+        -->
 
+        <div class="container" id="corpoPagina">
 
+            <div id="loader" class="loader center-block"></div>
+
+            <div id="paginaLogin" class="invisible">
+                <div class="box-login text-center">
+                    <h5><strong>FAÇA LOGIN UTILIZANDO SUA CONTA GOOGLE</strong></h5>
+                    <br>
+                    <div id="my-signin2"></div>
+                    <br><br>
+                    <a class="btn btn-success btn-lg btn-block btn-voltar" href="#">Voltar</a>
+                </div>           
+            </div>
+
+            <div id="paginaLogado" class="invisible">
+                <div class="box-login text-center">
+                <h5><strong>VOCÊ ESTÁ LOGADO COM SUA CONTA GOOGLE</strong></h5>
+                <br>
+                <div class="row">
+                <div class="column">
+                    <div class="card">
+                    <img src="#" class="img-responsive img-circle center-block" id="userImageURL">
+                    <div class="container">
+                        <h2 id="userName"></h2>
+                        <h4 id="userEmail"></h4>
+                        <p><button class="btn btn-primary" id="btn-logout">Fazer Logout</button></p>
+                    </div>
+                    </div>
+                </div>
+                </div>
+                <br><br>
+                <!--
+                <button type="button" class="btn btn-danger btn-lg btn-block" id="btn-logout">Logout</button>
+                -->
+                <a class="btn btn-success btn-lg btn-block btn-voltar" href="#">Voltar</a>
+                </div>
+            </div>
+
+        </div>
 
         <!-- ===============================================================================
                                             RODAPE
@@ -74,13 +110,25 @@
         <nav class="navbar navbar-default navbar-fixed-bottom">
             <div class="container-fluid">
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="#">ByteDoBem</a>
+                    <div class="navbar-brand">ByteDoBem</div>
                 </div>
             </div>
         </nav>
 
         <!-- Botao de Login do Google -->
-        <script src="js/login-render.js"></script>
+        <script>
+            function renderButton() {
+                gapi.signin2.render('my-signin2', {
+                    'scope': 'profile email',
+                    'width': 300,
+                    'height': 50,
+                    'longtitle': true,
+                    'theme': 'dark',
+                    'onsuccess': onSignIn,
+                    'onfailure': onFailure
+                });
+            }
+        </script>
         <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
 
     </body>
