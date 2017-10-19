@@ -1,7 +1,17 @@
 
 $(document).ready(function(){
 
+
+
     var data;
+    // var profile = googleUser.getBasicProfile();
+    // console.log("login.js> profile.getId()...:" + profile.getId());
+
+ // var profile = auth2.currentUser.get().getBasicProfile();
+    
+ 
+
+
 
     //**-- Carrega a pagina para retornar apos o Login/Logout  --**/
     //**---------------------------------------------------------**/
@@ -22,10 +32,16 @@ $(document).ready(function(){
     $("#paginaLogin").removeClass("invisible");
     $("#paginaLogado").removeClass("invisible");
     console.log('login.js> ******* INICIO LOGIN.JS *******');
-    // console.log('login.js> sessionStorage.userID......: ' + sessionStorage.userID );
-    // console.log('login.js> sessionStorage.userName....: ' + sessionStorage.userName );
-    // console.log('login.js> sessionStorage.userImageURL: ' + sessionStorage.userImageURL );
+    console.log('login.js> sessionStorage.userID......: ' + sessionStorage.userID );
+    console.log('login.js> sessionStorage.userName....: ' + sessionStorage.userName );
+    console.log('login.js> sessionStorage.userImageURL: ' + sessionStorage.userImageURL );
     console.log('login.js> sessionStorage.userEmail...: ' + sessionStorage.userEmail );
+    if ( sessionStorage.userID == "null" ) {
+        console.log('login.js> Entrou no IF do null ');
+    };
+    if ( sessionStorage.userID == "undefined" ) {
+        console.log('login.js> Entrou no IF do undefined ');
+    };
     if ( sessionStorage.userID == "null" || sessionStorage.userID == "undefined" ) {
         $("#tituloLogin").text("Login");
         $("#paginaLogin").show();
@@ -78,3 +94,4 @@ function onSignIn(googleUser) {
 function onFailure(error) {
     console.log(error);
 }
+
