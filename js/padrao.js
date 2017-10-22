@@ -1,12 +1,10 @@
-console.log("evangelho365.js> **** Esta Carregando o padrao.js ****");
+console.log("padrão.js> **** Esta Carregando o padrao.js ****");
 
-/*-- Inicializacao das Variaveis Globais --*/
-var estaLogado;
 
 /*-- Dados da sessionStorage utilizados --*/
 //      **-- Dados de usuario logado --**
-//      sessionStorage.userLogado
-//      sessionStorage.tipoLogin
+//      sessionStorage.userLogado       --> true ou false
+//      sessionStorage.tipoLogin        --> google ou facebook
 //      sessionStorage.googleID       
 //      sessionStorage.googleName
 //      sessionStorage.googleImageURL
@@ -35,12 +33,14 @@ function iniciaPadrao(nomePage) {
         sessionStorage.googleImageURL = undefined;
         sessionStorage.googleEmail    = undefined;
     };
+    sessionStorage.clickLogin = false;
     console.log('padrao.js> sessionStorage.userLogado..: ' + sessionStorage.userLogado );
     console.log('padrao.js> sessionStorage.tipoLogin...: ' + sessionStorage.tipoLogin );
     console.log('padrao.js> sessionStorage.userID......: ' + sessionStorage.googleID );
     console.log('padrao.js> sessionStorage.userName....: ' + sessionStorage.googleName );
     console.log('padrao.js> sessionStorage.userImageURL: ' + sessionStorage.googleImageURL );
     console.log('padrao.js> sessionStorage.userEmail...: ' + sessionStorage.googleEmail );
+    console.log('padrao.js> sessionStorage.clickLogin..: ' + sessionStorage.clickLogin );
 
 };
 

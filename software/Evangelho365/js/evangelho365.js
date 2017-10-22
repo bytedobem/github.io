@@ -8,6 +8,7 @@ $(document).ready(function(){
 
     iniciaPadrao("evangelho365"); 
 
+
     //**-- Guarda a URL da pagina na sessionStorage --**/
     //**----------------------------------------------**/
 
@@ -15,6 +16,7 @@ $(document).ready(function(){
     console.log("evangelho365.js> sessionStorage.urlPage: " + sessionStorage.urlPage);
 
 
+    
     /*
     var pageParm;        // parametro "page" da URL.
     var pageURL;         // caminho para o parametro "page" da URL.

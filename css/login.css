@@ -1,3 +1,14 @@
+.padding-lados-5 {
+      padding-left: 5%;
+      padding-right: 5%;
+}
+
+.padding-lados-10 {
+      padding-left: 10%;
+      padding-right: 10%;
+}
+
+
 #customBtn {
   display: inline-block;
   background: #4285f4;
