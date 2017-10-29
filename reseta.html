@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <!-- Meta tags padrao -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <title>Reseta os dados da sessionStorage e locaoStorage</title>
+
+        <!-- Bootstrap CSS/JS e JQuery -->
+        <link rel="stylesheet" href="../../dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../../dist/css/bootstrap-grid.min.css">
+        <link rel="stylesheet" href="../../dist/css/bootstrap-reboot.min.css">
+        <script src="../../dist/js/popper.js"></script>
+        <script src="../../dist/js/jquery-3.2.1.min.js"></script>
+        <script src="../../dist/js/bootstrap.bundle.min.js"></script>
+        <script src="../../dist/js/bootstrap.min.js"></script>
+
+        <script>
+            $(document).ready(function(){
+
+                $("#btn-session-padrao-ver").click(function(){
+
+                    console.log("reseta> ***** GRAVADOS SESSION STORAGE - PADRAO.JS *****");
+                    console.log("reseta> userLogado..: " + sessionStorage.userLogado);
+                    console.log("reseta> tipoLogin...: " + sessionStorage.tipoLogin);
+                    console.log("reseta> clickLogin..: " + sessionStorage.clickLogin);
+                    console.log("reseta> userID......: " + sessionStorage.userID);
+                    console.log("reseta> userName....: " + sessionStorage.userName);
+                    console.log("reseta> userImageURL: " + sessionStorage.userImageURL);
+                    console.log("reseta> userEmail...: " + sessionStorage.userEmail);
+                    console.log("reseta> urlPage.....: " + sessionStorage.urlPage);
+
+                });
+
+                $("#btn-session-padrao-del").click(function(){
+
+                    console.log("reseta> ***** RESETANDO SESSION STORAGE - PADRAO.JS *****");
+                    sessionStorage.userLogado   = undefined;
+                    sessionStorage.tipoLogin    = undefined;
+                    sessionStorage.clickLogin   = undefined;
+                    sessionStorage.userID       = undefined;
+                    sessionStorage.userName     = undefined;
+                    sessionStorage.userImageURL = undefined;
+                    sessionStorage.userEmail    = undefined;
+                    sessionStorage.urlPage      = undefined;
+                    console.log("reseta> userLogado..: " + sessionStorage.userLogado);
+                    console.log("reseta> tipoLogin...: " + sessionStorage.tipoLogin);
+                    console.log("reseta> clickLogin..: " + sessionStorage.clickLogin);
+                    console.log("reseta> userID......: " + sessionStorage.userID);
+                    console.log("reseta> userName....: " + sessionStorage.userName );
+                    console.log("reseta> userImageURL: " + sessionStorage.userImageURL);
+                    console.log("reseta> userEmail...: " + sessionStorage.userEmail);
+                    console.log("reseta> urlPage.....: " + sessionStorage.urlPage);
+
+                });
+
+                $("#btn-session-ev365-ver").click(function(){
+
+                    console.log("reseta> ***** GRAVADOS SESSION STORAGE - EVANGELHO365.JS *****");
+                    console.log("reseta> ev365_telaBenvindo: " + sessionStorage.ev365_telaBenvindo);
+                    console.log("reseta> ev365_leituraAtiva: " + sessionStorage.ev365_leituraAtiva);
+                    console.log("reseta> ev365_tipoLogin...: " + sessionStorage.ev365_tipoLogin);
+                    console.log("reseta> ev365_emailLogin..: " + sessionStorage.ev365_emailLogin);
+                    console.log("reseta> ev365_dataInicial.: " + sessionStorage.ev365_dataInicial );
+                    console.log("reseta> ev365_arrayLidas..: " + sessionStorage.ev365_arrayLidas);
+
+                });
+
+                $("#btn-session-ev365-del").click(function(){
+
+                    console.log("reseta> ***** RESETANDO SESSION STORAGE - EVANGELHO365.JS *****");
+                    sessionStorage.ev365_telaBenvindo = undefined;
+                    sessionStorage.ev365_leituraAtiva = undefined;
+                    sessionStorage.ev365_tipoLogin    = undefined;
+                    sessionStorage.ev365_emailLogin   = undefined;
+                    sessionStorage.ev365_dataInicial  = undefined;
+                    sessionStorage.ev365_arrayLidas   = undefined;
+                    console.log("reseta> ev365_telaBenvindo: " + sessionStorage.ev365_telaBenvindo);
+                    console.log("reseta> ev365_leituraAtiva: " + sessionStorage.ev365_leituraAtiva);
+                    console.log("reseta> ev365_tipoLogin...: " + sessionStorage.ev365_tipoLogin);
+                    console.log("reseta> ev365_emailLogin..: " + sessionStorage.ev365_emailLogin);
+                    console.log("reseta> ev365_dataInicial.: " + sessionStorage.ev365_dataInicial );
+                    console.log("reseta> ev365_arrayLidas..: " + sessionStorage.ev365_arrayLidas);
+
+                });
+
+                $("#btn-local-ev365-ver").click(function(){
+
+                    console.log("reseta> ***** GRAVADOS LOCAL STORAGE - EVANGELHO365.JS *****");
+                    console.log("reseta> ev365_temRegistro.: " + localStorage.getItem("ev365_temRegistro"));
+                    console.log("reseta> ev365_dataInicial.: " + localStorage.getItem("ev365_dataInicial"));
+                    console.log("reseta> ev365_arrayLidas..: " + localStorage.getItem("ev365_arrayLidas"));
+
+                });
+
+                $("#btn-local-ev365-del").click(function(){
+
+                    console.log("reseta> ***** RESETANDO LOCAL STORAGE - EVANGELHO365.JS *****");
+                    localStorage.removeItem("ev365_temRegistro");
+                    localStorage.removeItem("ev365_dataInicial");
+                    localStorage.removeItem("ev365_arrayLidas");
+                    console.log("reseta> ev365_temRegistro..." + localStorage.getItem("ev365_temRegistro"));
+                    console.log("reseta> ev365_dataInicial..." + localStorage.getItem("ev365_dataInicial"));
+                    console.log("reseta> ev365_arrayLidas...." + localStorage.getItem("ev365_arrayLidas"));
+
+                });
+
+            });
+        </script>
+
+    </head>
+    <body>
+        <div class="container text-center">
+
+            <br>
+            <div class="alert alert-success" role="alert">
+                <p class="h6"><strong>DADOS GRAVADOS NA SESSION STORAGE</strong></p>
+                <p class="h3"><strong>padrao.js</strong></p>
+            </div>
+            <div class="row">
+                <div class="col-sm-5">
+                    <a class="btn btn-warning btn-lg btn-block" id="btn-session-padrao-ver">
+                        Consultar
+                    </a>
+                </div>
+                <div class="col-sm-2"></div>
+                <div class="col-sm-5">
+                    <a class="btn btn-danger btn-lg btn-block" id="btn-session-padrao-del">
+                        Resetar
+                    </a>
+                </div>
+            </div>
+
+            <br>
+            <div class="alert alert-success" role="alert">
+                <p class="h6"><strong>DADOS GRAVADOS NA SESSION STORAGE</strong></p>
+                <p class="h3"><strong>evangelho365.js</strong></p>
+            </div>
+            <div class="row">
+                <div class="col-sm-5">
+                    <a class="btn btn-warning btn-lg btn-block" id="btn-session-ev365-ver">
+                        Consultar
+                    </a>
+                </div>
+                <div class="col-sm-2"></div>
+                <div class="col-sm-5">
+                    <a class="btn btn-danger btn-lg btn-block" id="btn-session-ev365-del">
+                        Resetar
+                    </a>
+                </div>
+            </div>
+
+            <br>
+            <div class="alert alert-success" role="alert">
+                <p class="h6"><strong>DADOS GRAVADOS NA LOCAL STORAGE</strong></p>
+                <p class="h3"><strong>evangelho365.js</strong></p>
+            </div>
+            <div class="row">
+                <div class="col-sm-5">
+                    <a class="btn btn-warning btn-lg btn-block" id="btn-local-ev365-ver">
+                        Consultar
+                    </a>
+                </div>
+                <div class="col-sm-2"></div>
+                <div class="col-sm-5">
+                    <a class="btn btn-danger btn-lg btn-block" id="btn-local-ev365-del">
+                        Resetar
+                    </a>
+                </div>
+            </div>
+
+            <br>
+            <br>
+            <a class="btn btn-primary btn-lg btn-block" href="index.html">
+                Voltar para a pagina principal
+            </a>
+
+        </div>
+    </body>
+</html>

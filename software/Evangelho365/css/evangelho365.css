@@ -1,8 +1,37 @@
 
+body {
+    background-color: #e0f2f1;
+}
+
+#corpoPagina {
+    padding-top: 90px;
+    padding-bottom: 100px;
+}
+
+#navTop {
+    background-color: #004C8C;
+}
+
+#navBottom {
+    background-color: #58A5F0;
+}
+
+#linhaMenu {
+    background-color: #58A5F0;
+}
+
+.force-padding-5 {
+    padding: 5px;
+}
+
 .force-padding-10 {
     padding: 10px;
 }
 
 .force-padding-20 {
     padding: 20px;
+}
+
+.img-user {
+    border-radius: 50%;
 }

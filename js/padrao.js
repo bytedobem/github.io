@@ -1,20 +1,38 @@
+//***************************************************************************************************
+// Projeto......: ByteDoBem   
+// Site.........: www.bytedobem.com   
+// Aplicativo...: Site do Byte    
+// Modulo.......: padrao.js
+// Autor........: Nivaldo   
+// Data.........: 25/10/2017   
+//***************************************************************************************************
+// Versao 001-25/10/2017-(Nivaldo) Implantação.
+//***************************************************************************************************
+//
+//      **-- DADOS ARMAZENADOS NA SESSIONSTORAGE --**
+//      **------------------------------------------*      
+//
+//      **-- Dados de Controle de Login --**
+//      sessionStorage.userLogado       --> "S" ou "N"
+//      sessionStorage.tipoLogin        --> google ou facebook
+//      sessionStorage.clickLogin       --> "S" ou "N" (usado no login.js)
+//
+//      **-- Dados de usuario logado --**
+//      sessionStorage.userID       
+//      sessionStorage.userName
+//      sessionStorage.userImageURL
+//      sessionStorage.userEmail
+//
+//      **-- Pagina que está sendo executada --**
+//      sessionStorage.urlPage          --> Usado para retornar a pagina chamadora (login, contato, etc.)
+//
+//***************************************************************************************************
 console.log("padrão.js> **** Esta Carregando o padrao.js ****");
 
 
-/*-- Dados da sessionStorage utilizados --*/
-//      **-- Dados de usuario logado --**
-//      sessionStorage.userLogado       --> true ou false
-//      sessionStorage.tipoLogin        --> google ou facebook
-//      sessionStorage.googleID       
-//      sessionStorage.googleName
-//      sessionStorage.googleImageURL
-//      sessionStorage.googleEmail
-//      **-- Pagina que está sendo executada --**
-//      sessionStorage.urlPage
-
-
-/*-- Funcao: iniciaPadrao --*/
-/*--------------------------*/
+/*===========================================================================*/
+/* Funcao:                          INICIA PADRAO                            */
+/*===========================================================================*/
 
 function iniciaPadrao(nomePage) {
     console.log("padrao.js> Executando iniciaPadrao(" + nomePage + ")");
@@ -22,31 +40,34 @@ function iniciaPadrao(nomePage) {
     /*-- Verifica usuario logado na sessionStorage --*/
     /*-----------------------------------------------*/
 
-    if ( sessionStorage.userLogado == "true" ) {
+    if ( sessionStorage.userLogado == "S" ) {
         console.log("padrao.js> Usuario já está Logado...");
-        $("#menuLogin").html("<span class='glyphicon glyphicon-log-out'></span> Logout");
+        $("#botaoLogin").html("Logout");
     } else {
-        sessionStorage.userLogado     = false;
-        sessionStorage.tipoLogin      = undefined;
-        sessionStorage.googleID       = undefined;
-        sessionStorage.googleName     = undefined;
-        sessionStorage.googleImageURL = undefined;
-        sessionStorage.googleEmail    = undefined;
+        sessionStorage.userLogado   = "N";
+        sessionStorage.tipoLogin    = undefined;
+        sessionStorage.userID       = undefined;
+        sessionStorage.userName     = undefined;
+        sessionStorage.userImageURL = undefined;
+        sessionStorage.userEmail    = undefined;
     };
-    sessionStorage.clickLogin = false;
-    console.log('padrao.js> sessionStorage.userLogado..: ' + sessionStorage.userLogado );
-    console.log('padrao.js> sessionStorage.tipoLogin...: ' + sessionStorage.tipoLogin );
-    console.log('padrao.js> sessionStorage.userID......: ' + sessionStorage.googleID );
-    console.log('padrao.js> sessionStorage.userName....: ' + sessionStorage.googleName );
-    console.log('padrao.js> sessionStorage.userImageURL: ' + sessionStorage.googleImageURL );
-    console.log('padrao.js> sessionStorage.userEmail...: ' + sessionStorage.googleEmail );
-    console.log('padrao.js> sessionStorage.clickLogin..: ' + sessionStorage.clickLogin );
+
+    sessionStorage.clickLogin = "N";
+    console.log('padrao.js> ---- Dados gravados na sessionStorage ----');
+    console.log('padrao.js> userLogado....: ' + sessionStorage.userLogado );
+    console.log('padrao.js> tipoLogin.....: ' + sessionStorage.tipoLogin );
+    console.log('padrao.js> userID........: ' + sessionStorage.userID );
+    console.log('padrao.js> userName......: ' + sessionStorage.userName );
+    console.log('padrao.js> userImageURL..: ' + sessionStorage.userImageURL );
+    console.log('padrao.js> userEmail.....: ' + sessionStorage.userEmail );
+    console.log('padrao.js> clickLogin....: ' + sessionStorage.clickLogin );
 
 };
 
 
-/*-- Funcao: decodificaURL --*/
-/*---------------------------*/
+/*===========================================================================*/
+/* Funcao:                         DECODIFICA URL                            */
+/*===========================================================================*/
 
 function decodificaURL() {
     console.log("padrao.js> Executando decodificaURL()");

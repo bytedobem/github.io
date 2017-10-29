@@ -1,3 +1,13 @@
+//***************************************************************************************************
+// Projeto......: ByteDoBem   
+// Site.........: www.bytedobem.com   
+// Aplicativo...: Site do Byte    
+// Modulo.......: login.js
+// Autor........: Nivaldo   
+// Data.........: 25/10/2017   
+//***************************************************************************************************
+// Versao 001-25/10/2017-(Nivaldo) Implantação.
+//***************************************************************************************************
 console.log("login.js> **** Esta Carregando o login.js ****");
 
 $(document).ready(function(){
@@ -33,7 +43,7 @@ $(document).ready(function(){
     var titPage; 
 
     console.log('login.js> sessionStorage.userLogado..: ' + sessionStorage.userLogado );
-    if ( sessionStorage.userLogado == "true" ) {
+    if ( sessionStorage.userLogado == "S" ) {
         titPage = "Logout"
         $("#pag-logout").show();
         $("#pag-login").hide();
@@ -44,7 +54,7 @@ $(document).ready(function(){
     };
     $("#tituloLogin").text(titPage);
 
-    if ( sessionStorage.userLogado == "true" ) {
+    if ( sessionStorage.userLogado == "S" ) {
         $("#userImageURL").attr("src", sessionStorage.userImageURL); 
         $("#userName").text(sessionStorage.userName); 
         $("#userEmail").text(sessionStorage.userEmail); 
@@ -54,7 +64,7 @@ $(document).ready(function(){
     $("#btn-logout").click(function(){
         var auth2 = gapi.auth2.getAuthInstance();
         auth2.signOut().then(function () {
-            sessionStorage.userLogado   = false;
+            sessionStorage.userLogado   = "N";
             sessionStorage.tipoLogin    = undefined;
             sessionStorage.userID       = undefined;
             sessionStorage.userName     = undefined;
@@ -69,7 +79,7 @@ $(document).ready(function(){
     /*-- Click no Botao de Login do Google --*/
     $("#my-signin2").click(function(){
         console.log("login.js> ###### clicou no botao do LOGIN ######");
-        sessionStorage.clickLogin = true;
+        sessionStorage.clickLogin = "S";
     });
    
     console.log("login.js> **** Fim do Ready ****");
@@ -83,14 +93,16 @@ function onSignIn(googleUser) {
     console.log('login.js> sessionStorage.clickLogin: ' + sessionStorage.clickLogin);
     var profile = googleUser.getBasicProfile();
     //**-- Carrega os dados do Usuario na sessao --*/
-    if ( sessionStorage.clickLogin == "true" ) {
+    if ( sessionStorage.clickLogin == "S" ) {
         console.log('login.js> entroi no IF do clickLogin');
-        sessionStorage.userLogado   = true;
+        sessionStorage.userLogado   = "S";
         sessionStorage.tipoLogin    = "google";
         sessionStorage.userID       = profile.getId();
         sessionStorage.userName     = profile.getName();
         sessionStorage.userImageURL = profile.getImageUrl();
         sessionStorage.userEmail    = profile.getEmail();
+        console.log("login.js> userEmail...: " + sessionStorage.userEmail);
+        console.log("login.js> userImageURL: " + sessionStorage.userImageURL);
         //**-- Prepara a pagina de Logout --**//
         $("#tituloLogin").text("Logout");
         $("#pag-login").hide();
@@ -98,8 +110,8 @@ function onSignIn(googleUser) {
         $("#userImageURL").attr("src", sessionStorage.userImageURL); 
         $("#userName").text(sessionStorage.userName); 
         $("#userEmail").text(sessionStorage.userEmail);
-        //**-- Retorna o clickLogin para false --*/
-        sessionStorage.clickLogin = false; 
+        //**-- Retorna o clickLogin para "N" --*/
+        sessionStorage.clickLogin = "N"; 
     };
 };
 
