@@ -329,8 +329,13 @@ function carregaHome() {
     $("#id_inicioLeituras").text(ws_dataInicialLocal); 
     $("#id_quantidadeLidas").text(ws_quantidadeLidas); 
 
-    if ( ws_temLogado == "N" ) {
-        $( "#id_boxLeitorLogado" ).hide();
+    if ( ws_temLogado == "S" ) {
+//        $( "#id_boxLeitorLogado" ).hide();
+
+//        $( "#id_userImage" ).  src="https://lh3.googleusercontent.com/-zg5PuHuJL_8/AAAAAAAAAAI/AAAAAAAAADg/w0QbffyEuN0/s96-c/photo.jpg">
+        $( "#id_userName" ).text( "Nivaldo Hydalgo" );
+        $( "#id_userEmail" ).text( "nivaldohydalgo@gmail.com" );
+
     };
 
 

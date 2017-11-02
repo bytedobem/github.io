@@ -2,20 +2,27 @@
 <div class="container text-center">    
 
     <div id="id_boxLeitorLogado">
-        <div class="alert alert-success" role="alert">
-            <img class="img-user" src="https://lh3.googleusercontent.com/-zg5PuHuJL_8/AAAAAAAAAAI/AAAAAAAAADg/w0QbffyEuN0/s96-c/photo.jpg">
+        <div class="alert alert-warning" role="alert">
+            <img id="id_userImage" class="img-user" src="../../img/user-undefined.png">
             <div class="col-sm-12 force-padding-5"></div>
-            <p class="h4"><strong>Nivaldo Hydalgo</strong></p>
-            <p class="lead"><em>nivaldohydalgo@gmail.com</em></p>
+            <p id="id_userName" class="h4"><strong>??????????</strong></p>
+            <p id="id_userEmail" class="lead"><em>@@@@@@@@@@@@@@@@</em></p>
         </div>
     </div>
 
+    <div class="row"><div class="col-sm-12 force-padding-10"></div></div>
+
+
+    <div class="mx-auto fonte-roboto fonte-cor-cinza">
+  Inicio das Leituras: <strong id="id_inicioLeituras">00/00/0000</strong><br>
+  Quantidade já Lidas: <strong id="id_quantidadeLidas">0</strong><br>
+</div>
+
+    <div class="row"><div class="col-sm-12 force-padding-20"></div></div>
+
     <div class="row">
         <div class="col-sm-12">
-            <div class="alert alert-info" role="alert">
-                <p class="h6">Inicio das Leituras: <strong id="id_inicioLeituras">00/00/0000</strong></p>
-                <p class="h6">Quantidade já Lidas: <strong id="id_quantidadeLidas">0</strong></p>
-            </div>
+            <a class="btn btn-info btn-lg btn-block botao-shadow" id="id_leituraDoDia" href="index.html?page=leitura&ndia=1">Leitura do Dia</a>
         </div>
     </div>
 
@@ -23,15 +30,7 @@
 
     <div class="row">
         <div class="col-sm-12">
-            <a class="btn btn-info btn-lg btn-block" id="id_leituraDoDia" href="index.html?page=leitura&ndia=1">Leitura do Dia</a>
-        </div>
-    </div>
-
-    <div class="row"><div class="col-sm-12 force-padding-10"></div></div>
-
-    <div class="row">
-        <div class="col-sm-12">
-            <a class="btn btn-info btn-lg btn-block" id="id_leituraPendente" href="index.html?page=leitura&ndia=1">Leitura Pendente</a>
+            <a class="btn btn-info btn-lg btn-block botao-shadow" id="id_leituraPendente" href="index.html?page=leitura&ndia=1">Leitura Pendente</a>
         </div>
     </div>
 
@@ -39,7 +38,7 @@
 
     <div class="row">
         <div class="col-sm-5">
-            <a class="btn btn-warning btn-lg btn-block" href="index.html?page=status">
+            <a class="btn btn-warning btn-lg btn-block botao-shadow" href="index.html?page=status">
                 Status das Leituras
             </a>
         </div>
@@ -47,7 +46,7 @@
         <div class="col-sm-2 force-padding-10"></div>
     
         <div class="col-sm-5">
-            <a class="btn btn-danger btn-lg btn-block" href="index.html?page=restart">
+            <a class="btn btn-danger btn-lg btn-block botao-shadow" href="index.html?page=restart">
                 Reiniciar Leituras
             </a>
         </div>
