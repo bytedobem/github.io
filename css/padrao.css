@@ -1,158 +1,174 @@
-/*
+
 body {
-      background-color: #F7F7F7;
-      padding-top: 80px;
-      padding-bottom: 100px;
+    background-color: #FFFFFF;
 }
-*/
 
 
-/*-- Utilizado para incluir o class="" nas tags 
-.noClass {
 
+
+
+
+
+
+.pd_img-user {
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 3px;
+    width: 100px;
 }
-*/
 
-/*
 
-        .texto-salmon {
-            color: #ff7f65;
-        }
-        .texto-white {
-            color: #ffffff;
-        }
-        .fundo-darkblue {
-            background-color: #00648e;
-        }
-        .fundo-blue {
-            background-color: #64c1c7;
-        }
-        .fundo-orange {
-            background-color: #F88246;
-        }
-        .fundo-magenta {
-            background-color: #ca404c;
-        }
+.pd_box-info {
+    color: #0c5460;
+    background-color: #d1ecf1;
+    border-color: #bee5eb;
+    border: 1px solid #bee5eb;
+    border-radius: 8px;
+    box-shadow: 4px 4px 4px #aaa;
+}
 
-*/
 
 /* ======================================================================
-                    Configuração de cor do NAVBAR      
+                              P A D D I N G
 =======================================================================*/
 
-/*
-.navbar-default {
-  background-color: #55ACEE;
-  border-color: #55ACEE;
+.pd_padding-top-bottom {
+    padding-top: 90px;
+    padding-bottom: 100px;
 }
 
-.navbar-default .navbar-brand {
-  color: #FFFFFF;
+.pd_padding-5 {
+    padding: 5px;
 }
 
-.navbar-default .navbar-brand:hover,
-.navbar-default .navbar-brand:focus {
-  color: #F7F7F7;
-}
-*/
-
-/*
-.navbar-default .navbar-text {
-  color: #292F33;
-}
-*/
-
-/*
-.navbar-default .navbar-nav > li > a {
-  color: #FFFFFF;
+.pd_padding-10 {
+    padding: 10px;
 }
 
-.navbar-default .navbar-nav > li > a:hover,
-.navbar-default .navbar-nav > li > a:focus {
-  color: #292F33;
-  background-color: #F7F7F7;              
+.pd_padding-20 {
+    padding: 20px;
 }
 
-.ativado {
-  color: #292F33;                      
-  background-color: #00A1F1;            
-  font-weight: bold; 
-  letter-spacing: 1px; 
-}
-*/
-
-/*
-.navbar-default .navbar-nav > .active > a,
-.navbar-default .navbar-nav > .active > a:hover,
-.navbar-default .navbar-nav > .active > a:focus {
-  color: #000FFF;                      
-  background-color: #ABCDE0;            
-  font-weight: bold;  
-}
-*/
-
-/*
-.navbar-default .navbar-nav > .open > a,
-.navbar-default .navbar-nav > .open > a:hover,
-.navbar-default .navbar-nav > .open > a:focus {
-  color: #292F33;
-  background-color: #55ACEE;           
-}
-*/
-
-/*
-.navbar-default .navbar-toggle {
-  border-color: #55ACEE;
-}
-.navbar-default .navbar-toggle:hover,
-.navbar-default .navbar-toggle:focus {
-  background-color: #55ACEE;     
-}
-
-.navbar-default .navbar-toggle .icon-bar {
-  background-color: #FFFFFF;
-}
-
-.navbar-default .navbar-collapse,
-.navbar-default .navbar-form {
-  border-color: #FFFFFF;
-}
-*/
-
-/*
-.navbar-default .navbar-link {
-  color: #FFFFFF;
-}
-.navbar-default .navbar-link:hover {
-  color: #292F33;
-}
-*/
-
-/*
-@media (max-width: 767px) {
-  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
-    color: #FFFFFF;
-  }
-  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
-  .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
-    color: #292F33;
-  }
-  .navbar-default .navbar-nav .open .dropdown-menu > .active > a,
-  .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
-  .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
-    color: #292F33;
-    background-color: #00A1F1;                    
-  }
-}
-*/
 
 /* ======================================================================
-                               LOADER
+                               S H A D O W
 =======================================================================*/
 
-.loader {
+.pd_botao-shadow {
+    box-shadow: 8px 8px 8px #aaa;
+}
+
+.pd_texto-shadow {
+    text-shadow: 8px 8px 8px #aaa;
+}
+
+
+/* ======================================================================
+                     B A C K G R O U N D   C O L O R
+====================================================================== */
+
+.pd_bgcor-dodgerBlue {
+  background-color: #1E90FF;
+}
+
+
+/* ======================================================================
+                               F O N T E S
+====================================================================== */
+
+/* ------ FONTE - SIZE ------ */
+/* -------------------------- */
+
+.pd_fonte-14px {
+    font-size: 14px;
+}
+
+.pd_fonte-16px {
+    font-size: 16px;
+}
+
+.pd_fonte-18px {
+    font-size: 18px;
+}
+
+.pd_fonte-20px {
+    font-size: 20px;
+}
+
+.pd_fonte-22px {
+    font-size: 22px;
+}
+
+.pd_fonte-24px {
+    font-size: 24px;
+}
+
+.pd_fonte-30px {
+    font-size: 30px;
+}
+
+/* ------ FONTE - FAMILY ------ */
+/* ---------------------------- */
+
+.pd_fonte-verdana {
+    font-family: Verdana,Geneva,sans-serif;
+}
+
+.pd_fonte-arial {
+    font-family: Arial,Helvetica Neue,Helvetica,sans-serif;
+}
+
+/* ------ FONTE - COLOR ------ */
+/* --------------------------- */
+
+.pd_cor-dodgerBlue {
+  color: #1E90FF;
+}
+
+.pd_cor-slateGray {
+  color: #708090;
+}
+
+.pd_cor-steelBlue {
+  color: #4682B4;
+}
+
+.pd_cor-tomato {
+  color: #FF6347;
+}
+
+/* ------ FONTE - DIVERSOS ------ */
+/* ------------------------------ */
+
+.pd_fonte-italic {
+    font-style: italic;
+}
+
+.pd_fonte-bold {
+    font-weight: bold;
+}
+
+.pd_fonte-variant {
+    font-variant: small-caps;
+}
+
+.pd_text-left {
+    text-align: left;
+}
+
+.pd_text-nowrap {
+    white-space: nowrap;
+}
+
+
+/* ======================================================================
+                               L O A D E R
+=======================================================================*/
+
+.pd_loader {
   position: absolute;
   left: 50%;
+  right: 50%;
   top: 35%;
   border: 6px solid #f3f3f3;
   border-radius: 50%;

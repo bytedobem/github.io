@@ -46,7 +46,7 @@ var ws_dataInicial;               // data inicial das leituras (sem formatar)
 var ws_dataAtual;                 // data de hoje (sem formatar)
 var ws_dataInicialLocal;          // data inicial das leituras (formatada)
 var ws_dataAtualLocal;            // data de hoje (formatada)
-var ws_arrayDatas = new Array();  // array de leituras lidas
+var ws_arrayDatas = new Array();  // array das datas das leituras
 var ws_arrayLidas = new Array();  // array de leituras lidas
 var ws_quantidadeLidas = 0;       // quantidade de leituras já lidas
 
@@ -114,7 +114,6 @@ $(document).ready(function(){
         numDia = 0;
     }
     if ( sessionStorage.ev365_telaBenvindo != "S" ) {
-        sessionStorage.ev365_telaBenvindo = "S";
         pageURL  = "benvindo";
     };
     console.log("evangelho365.js> pageURL final...: " + pageURL);
@@ -148,11 +147,11 @@ $(document).ready(function(){
                 case "sobre":
                     break;
                 default:
-            } 
+            }; 
         } else {
             data = "<h3>Erro: Não foi possível carregar a pagina " + pageURL + ".html...</h3>";
             $("#corpoPagina").html(data);
-        }
+        };
     });
 
 
@@ -330,14 +329,10 @@ function carregaHome() {
     $("#id_quantidadeLidas").text(ws_quantidadeLidas); 
 
     if ( ws_temLogado == "S" ) {
-//        $( "#id_boxLeitorLogado" ).hide();
-
-//        $( "#id_userImage" ).  src="https://lh3.googleusercontent.com/-zg5PuHuJL_8/AAAAAAAAAAI/AAAAAAAAADg/w0QbffyEuN0/s96-c/photo.jpg">
-        $( "#id_userName" ).text( "Nivaldo Hydalgo" );
-        $( "#id_userEmail" ).text( "nivaldohydalgo@gmail.com" );
-
+        $( "#id_userImage" ).attr( "src", ws_imageSession );
+        $( "#id_userName"  ).html( "<strong>" + ws_nameSession + "</strong>" );
+        $( "#id_userEmail" ).html( "<em>" + ws_emailSession + "</em>" );
     };
-
 
 };
 
@@ -541,13 +536,146 @@ function carregaNumHojePend() {
 ######################################################################################## */
 
 
+/*-------------------------------*/
 function carregaLeitura(nLeitura) {
+/*-------------------------------*/
 console.log("evangelho365> Executando carregaLeitura() para nLeitura: " + nLeitura);
 
-$("#id_nomeEvangelho").html("<h2> Evangelho de São Mateus </h2>" + "Leitura: " + nLeitura);
+    nLeitura = parseInt(nLeitura);
+
+    console.log("sessionStorage.ev365_dataInicial:" + sessionStorage.ev365_dataInicial);
+    console.log("sessionStorage.ev365_arrayLidas.:" + sessionStorage.ev365_arrayLidas);
+
+
+
+
+    if ( nLeitura <= 0 || nLeitura > 365 ) {
+        nLeitura = 365;
+    };
+
+    ws_dataInicial = new Date(sessionStorage.ev365_dataInicial);
+    ws_arrayLidas  = converteLidasEmArray(sessionStorage.ev365_arrayLidas);
+    carrega_ws_arrayDatas( ws_dataInicial );
+
+    console.log("ws_arrayLidas[" + nLeitura + "].:" + ws_arrayLidas[nLeitura]);
+
+    $("#id_nomeEvangelho").text( retornaNomeEvangelho(nLeitura) );
+
+    $("#id_leituraEvangelho").text( retornaLeituraEvangelho(nLeitura) );
+
+    $("#id_leituraIndicada").text( "Leitura " + nLeitura + " indicada para o dia " + ws_arrayDatas[nLeitura] );
+
+
+    
+
+    if ( nLeitura == 1 || nLeitura == 4 ) {
+        ws_arrayLidas[nLeitura] = "S";
+    };
+    console.log("ws_arrayLidas[" + nLeitura + "].:" + ws_arrayLidas[nLeitura]);
+
+
+
+
+    /*-- Carrega o CheckBox de leitura Lida --*/
+    if ( ws_arrayLidas[nLeitura] == "S" ) {
+        $( "#id_imgLeituraLida" ).attr( "src", "img/checkbox-marked-24.png" );
+    };
+
+    /*-- Carrega a Paginação --*/
+    carregaPaginacaoLeituras(nLeitura);
+
+    /*-- Carrega o texto do Evangelho --*/
+    carregaTextoLeitura(nLeitura);
+    
+};
+
+
+/*------------------------------------*/
+function carregaTextoLeitura(nLeitura) {
+/*------------------------------------*/
+    var arqLeitura = formataNomeArquivo(nLeitura);
+
+    $.get( "leituras/" + arqLeitura , function(data, status){
+            console.log("evangelho365.js> get(" + arqLeitura + ") status: " + status);
+            if ( status === "success" ) {
+                console.log("###### esta entrando no SUCCESS ##########3");
+                $("#id_textoLeitura").html(data);
+            } else {
+                data = "<br><h6>Erro: Não foi possível carregar a Leitura do arquivo " + arqLeitura + "...</h6><br>";
+                $("#id_textoLeitura").html(data);
+            }
+    }).fail(function() {
+        data = "<br><h6>Erro: Não foi possível carregar a Leitura do arquivo " + arqLeitura + "...</h6><br>";
+        $("#id_textoLeitura").html(data);
+    });
 
 };
 
+
+/*-----------------------------------*/
+function formataNomeArquivo(nLeitura) {
+/*-----------------------------------*/
+    var data = "leit";
+
+    if ( nLeitura < 10 ) {
+        data += "00" + nLeitura + ".html"
+    } else {
+        if ( nLeitura < 100 ) {
+            data += "0" + nLeitura + ".html"
+        } else {
+            data += nLeitura + ".html"
+        };
+    };
+
+    return data;
+};
+
+
+/*-------------------------------------*/
+function retornaNomeEvangelho(nLeitura) {
+/*-------------------------------------*/
+    var data = "Evangelho de São João";
+
+
+    return data;
+};
+
+
+/*----------------------------------------*/
+function retornaLeituraEvangelho(nLeitura) {
+/*----------------------------------------*/
+    var data = "Jo 3, 20-31";
+
+
+    return data;
+};
+
+
+/*-----------------------------------------*/
+function carregaPaginacaoLeituras(nLeitura) {
+/*-----------------------------------------*/
+    var nAnterior , nProxima; 
+
+    nAnterior = nLeitura - 1;
+    nProxima = nLeitura + 1;
+    $("#id_numDiaAtualTop").text(nLeitura);
+    $("#id_numDiaAtualBottom").text(nLeitura);
+    $("#id_numDiaAnteriorTop").attr("href", "index.html?page=leitura&ndia=" + nAnterior); 
+    $("#id_numDiaAnteriorBottom").attr("href", "index.html?page=leitura&ndia=" + nAnterior); 
+    $("#id_numDiaProximaTop").attr("href", "index.html?page=leitura&ndia=" + nProxima); 
+    $("#id_numDiaProximaBottom").attr("href", "index.html?page=leitura&ndia=" + nProxima); 
+    switch( nLeitura ) {
+        case 1:
+            $( "#id_botaoAnteriorTop" ).addClass( "disabled" );
+            $( "#id_botaoAnteriorBottom" ).addClass( "disabled" );
+            break;
+        case 365:
+            $( "#id_botaoProximaTop" ).addClass( "disabled" );
+            $( "#id_botaoProximaBottom" ).addClass( "disabled" );
+            break;
+        default:
+    }; 
+};
 
 
 /* ########################################################################################
@@ -567,18 +695,21 @@ console.log("evangelho365> Executando carregaBenvindo()");
     console.log("evangelho365> emailSession.....: " + ws_nameSession);
     console.log("evangelho365> emailSession.....: " + ws_emailSession);
 
-    /*-- Se tiver leitor verifica se continua o mesmo que está logado/não logado --*/
+    /*-- Se tiver leitor mostra o usuário --*/
     if ( ws_temLogado == "S" ) {
-
-    } else {
-        $( "#id_boxLeitorLogado" ).hide();
+        $( "#id_userImage" ).attr( "src", ws_imageSession );
+        $( "#id_userName"  ).html( "<strong>" + ws_nameSession + "</strong>" );
+        $( "#id_userEmail" ).html( "<em>" + ws_emailSession + "</em>" );
     };
-
-// $("#id_nomeEvangelho").html("<h2> Evangelho de São Mateus </h2>" + "Leitura: " + nLeitura);
 
 };
 
+function btnIniciarLeituras() {
+console.log("evangelho365> Executando btnIniciarLeituras()");
 
+    sessionStorage.ev365_telaBenvindo = "S";
+
+};
 
 /* ########################################################################################
    ########################################################################################
@@ -663,4 +794,20 @@ function converteLidasEmString(arrayLidas) {
     };
 
     return stringLidas;
+};
+
+
+/*-------------------------------------*/
+function carrega_ws_arrayDatas(dataIni) {
+/*-------------------------------------*/
+    var dt, dtlocal;
+
+    ws_arrayDatas = new Array();            
+
+    dt = new Date(dataIni);
+    for (i = 1; i <= 365; i++) {
+        dtlocal = dt.toLocaleDateString();
+        ws_arrayDatas[i] = dtlocal;
+        dt.setDate(dt.getDate() + 1);
+    };
 };
