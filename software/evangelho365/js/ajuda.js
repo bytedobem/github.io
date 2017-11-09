@@ -1,17 +1,18 @@
 /*=============================================================================================*/
 /* Projeto......: Byte do Bem
-/* Modulo.......: login.js 
-/* Objetivo.....: JavaScript da pagina login.html
+/* Aplicativo...: Evangelho365
+/* Modulo.......: ajuda.js 
+/* Objetivo.....: JavaScript para a tela Ajuda
 /*=============================================================================================*/
 /* Vrs001-08-11-2017-Nivaldo-Implantacao
 /*=============================================================================================*/
-console.log("login.js> **** CARREGANDO ****");
+console.log("ajuda.js> **** CARREGANDO ****");
 
 
 $(document).ready(function(){
-    console.log("login.js> *** Executando o Ready ***");
+    console.log("ajuda.js> *** Executando o Ready ***");
 
-    cm_setaIconRetorno();
 
 
 });
+

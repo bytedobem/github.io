@@ -1,29 +1,17 @@
-console.log("contato.js> **** Esta Carregando o contato.js ****");
+/*=============================================================================================*/
+/* Projeto......: Byte do Bem
+/* Modulo.......: contato.js 
+/* Objetivo.....: JavaScript da pagina contato.html
+/*=============================================================================================*/
+/* Vrs001-08-11-2017-Nivaldo-Implantacao
+/*=============================================================================================*/
+console.log("contato.js> **** CARREGANDO ****");
+
 
 $(document).ready(function(){
-    console.log("contato.js> **** Esta Executando o Ready ****");
+    console.log("contato.js> *** Executando o Ready ***");
 
-    $("#loader").hide();
-    $("#pag-contato").removeClass("invisible");
-    $("#pag-contato").show();
+    cm_setaIconRetorno();
 
-    /*-- Executa o padrao.js --*/
-    /*-------------------------*/
 
-    iniciaPadrao("contato"); 
-
-    //**-- Carrega a pagina para retornar apos o Contato  --**/
-    //**----------------------------------------------------**/
-
-    if ( sessionStorage.urlPage == null || sessionStorage.urlPage == undefined ) {
-      $("#setaRetorno").attr("href", "index.html"); 
-      $(".btn-voltar").attr("href", "index.html"); 
-    } else {
-      $("#setaRetorno").attr("href", sessionStorage.urlPage); 
-      $(".btn-voltar").attr("href", sessionStorage.urlPage); 
-    }
-    console.log('contato.js> sessionStorage.urlPage.....: ' + sessionStorage.urlPage );
-
-    console.log("contato.js> **** Fim do Ready ****");
 });
-

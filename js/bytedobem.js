@@ -1,17 +1,8 @@
 /*=============================================================================================*/
 /* Projeto......: Byte do Bem
-/* Modulo.......: login.js 
-/* Objetivo.....: JavaScript da pagina login.html
+/* Modulo.......: bytedobem.js 
+/* Objetivo.....: JavaScript para a pagina inicial do Byte do Bem
 /*=============================================================================================*/
 /* Vrs001-08-11-2017-Nivaldo-Implantacao
 /*=============================================================================================*/
-console.log("login.js> **** CARREGANDO ****");
-
-
-$(document).ready(function(){
-    console.log("login.js> *** Executando o Ready ***");
-
-    cm_setaIconRetorno();
-
-
-});
+console.log("bytedobem.js> **** CARREGANDO ****");

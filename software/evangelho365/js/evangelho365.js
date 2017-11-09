@@ -1,17 +1,23 @@
 /*=============================================================================================*/
 /* Projeto......: Byte do Bem
-/* Modulo.......: login.js 
-/* Objetivo.....: JavaScript da pagina login.html
+/* Aplicativo...: Evangelho365
+/* Modulo.......: evangelho365.js 
+/* Objetivo.....: JavaScript do aplicativo
 /*=============================================================================================*/
 /* Vrs001-08-11-2017-Nivaldo-Implantacao
 /*=============================================================================================*/
-console.log("login.js> **** CARREGANDO ****");
+console.log("evangelho365.js> **** CARREGANDO ****");
 
 
 $(document).ready(function(){
-    console.log("login.js> *** Executando o Ready ***");
+    console.log("evangelho365.js> *** Executando o Ready ***");
 
-    cm_setaIconRetorno();
+    /*-- Grava na sessionStorage a URL da pagina atual --*/
+    cm_gravaUrlPage();
+
+
 
 
 });
+
+
