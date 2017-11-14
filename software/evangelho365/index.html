@@ -1,75 +1,52 @@
-<!-- ===========================================================================================
-  Projeto......: Byte do Bem
-  Aplicativo...: Evangelho365
-  Modulo.......: index.html 
-  Objetivo.....: Pagina Inicial do Evangelho365
-  ==========================================================================================
-  Vrs001-08-11-2017-Nivaldo-Implantacao
-============================================================================================ -->
+<!--===========================================================
+Projeto......: ByteDoBem
+Aplicativo...: Evangelho365
+Modulo.......: index.html
+Objetivo.....: Index do Evangelho365
+===============================================================
+Vrs001-13/11/2017-Nivaldo-Implantação.
+============================================================-->
 
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
-        <!-- Meta tags padrao -->
+
+        <title>Evangelho365</title>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <!-- Fontes Google -->
-        <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
-        <link href='https://fonts.googleapis.com/css?family=Roboto Condensed' rel='stylesheet'>
-        <link href='https://fonts.googleapis.com/css?family=Roboto Mono' rel='stylesheet'>
-        <link href='https://fonts.googleapis.com/css?family=Roboto Slab' rel='stylesheet'>
+        <!-- CSS do Bootstrap -->
+        <link rel="stylesheet" href="../../dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../../dist/css/bootstrap-grid.min.css">
+        <link rel="stylesheet" href="../../dist/css/bootstrap-reboot.min.css">
 
-        <!-- JQuery -->
-        <script src="../../dist/js/jquery-3.2.1.min.js"></script>
-
-        <!-- JS e CSS padrao -->
-        <link rel="stylesheet" href="../../css/common.css">
-        <script src="../../js/common.js"></script> -->
-
-        <!-- CSS e JS proprios -->
+        <!-- Frameworks JS -->
+        <script src="../../dist/js/jquery.min.js"></script>
+        <script src="../../dist/js/popper.min.js"></script>
+        <script src="../../dist/js/bootstrap.min.js"></script>
+            
+        <!-- CSS e JS padrão -->
+        <link rel="stylesheet" href="../../css/padrao.css">
+        <script src="../../js/padrao.js"></script>
+        
+        <!-- CSS e JS especificos -->
         <link rel="stylesheet" href="css/evangelho365.css">
-        <script src="js/evangelho365.js"></script> -->
-
+        <script src="js/evangelho365.js"></script>
+    
     </head>
     <body>
 
-        <!-- ===============================================================================
-                                             CABEÇALHO
-        ================================================================================ -->
+        <!-- Navbar TOP -->
+        <nav id="id_navbarTop" class="navbar navbar-expand-md bg-navbar-top navbar-dark fixed-top">
+        </nav> 
 
-        <div id="cm_myNav" class="cm_overlay">
-            <a href="javascript:void(0)" class="cm_closebtn" onclick="cm_closeNav()">&times;</a>
-            <div class="cm_overlay-content">
-                <a id="id_menu-home" href="index.html">Home</a>
-                <a id="id_menu-ajuda" href="ajuda.html">Ajuda</a>
-                <a id="id_menu-contato" href="../../contato.html">Contato</a>
-                <a id="id_menu-sobre" href="sobre.html">Sobre</a>
-                <br>
-                <a id="id_menu-login" href="../../login.html">Login</a>
-            </div>
-        </div>  
-
-        <div class="cm_navbar">
-            <span class="cm_navbar-nome-app">Evangelho365</span>
-            <span class="cm_navbar-icon-menu" onclick="cm_openNav()">&#9776;</span>
+        <!-- Corpo da PAGINA -->
+        <div id="id_corpoPagina" class="container-fluid">
         </div>
 
-        <!-- ===============================================================================
-                                         CORPO DA PAGINA
-        =============================================================================== -->
-
-        <div class="" id="corpoPagina">
-            <div class="cm_loader"></div>
-        </div>
-
-        <!-- ===============================================================================
-                                            RODAPE
-        =============================================================================== -->
-
-        <div class="cm_footer">
-            <a class="cm_footer-texto" href="../../index.html">www.bytedobem.com.br</a>
-        </div>
-
+        <!-- Navbar BOTTOM -->
+        <nav id="id_navbarBottom" class="navbar navbar-expand-md bg-navbar-bottom navbar-dark fixed-bottom">
+        </nav> 
+        
     </body>
-</html>
+</html> 

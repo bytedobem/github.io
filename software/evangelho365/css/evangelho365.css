@@ -1,8 +1,43 @@
-/*=============================================================================================*/
-/* Projeto......: Byte do Bem
-/* Aplicativo...: Evangelho365
-/* Modulo.......: evangelho365.css 
-/* Objetivo.....: CSS para o aplicativo
-/*=============================================================================================*/
-/* Vrs001-08-11-2017-Nivaldo-Implantacao
-/*=============================================================================================*/
+/*=============================================================
+Projeto......: ByteDoBem
+Aplicativo...: Evangelho365
+Modulo.......: evangelho365.css
+Objetivo.....: CSS para o Evangelho365
+===============================================================
+Vrs001-13/11/2017-Nivaldo-Implantação.
+=============================================================*/
+
+
+
+/*====================================================
+               CONFIGURAÇÃO DA NAVBAR
+====================================================*/
+
+.navbar.fixed-top {
+    box-shadow: 0px 8px 12px grey;
+}
+
+.bg-navbar-top {
+    background-color: #1565c0 !important;
+}
+  
+a.bg-navbar-top:focus, a.bg-navbar-top:hover {
+    background-color: #0d47a1 !important;
+}
+
+.bg-navbar-bottom {
+    background-color: #1976d2 !important;
+}
+  
+a.bg-navbar-bottom:focus, a.bg-navbar-bottom:hover {
+    background-color: #0d47a1 !important;
+}
+ 
+#id_iconRetorno {
+    padding-right: 10px;
+}
+
+.id_tamanhoIcon {
+    width: 36px;
+    height: 36px;
+}
