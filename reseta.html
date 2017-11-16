@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <title>ByteDoBem - RESETAR</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- CSS do Bootstrap -->
+        <link rel="stylesheet" href="../../dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../../dist/css/bootstrap-grid.min.css">
+        <link rel="stylesheet" href="../../dist/css/bootstrap-reboot.min.css">
+
+        <!-- Frameworks JS -->
+        <script src="../../dist/js/jquery.min.js"></script>
+        <script src="../../dist/js/popper.min.js"></script>
+        <script src="../../dist/js/bootstrap.min.js"></script>
+
+    <script>
+
+        function limpaSessionStorage() {
+            sessionStorage.urlPage   = undefined;
+            sessionStorage.userLendo = undefined;
+            sessionStorage.userTipo  = undefined;
+            sessionStorage.userNome  = undefined;
+            sessionStorage.userImage = undefined;
+            sessionStorage.userEmail = undefined;
+            console.log("reseta> *** Ressetou SessionStorage ***")
+        };
+
+    </script>
+
+  </head>
+  <body>
+
+    <h3>RESETAR dados da Session e da Local</h3>
+    
+    <p><button type="button" onclick="limpaSessionStorage();" class="btn btn-primary btn-block">Limpar SessionStorage</button></p>
+
+  </body>
+</html> 

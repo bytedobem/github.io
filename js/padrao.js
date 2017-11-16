@@ -9,40 +9,30 @@ Vrs001-13/11/2017-Nivaldo-Implantação.
 console.log("padr.js> *** Executando padrao.js ***");
 
 
-/*==============================================================
-                         PAGINA LOGIN
-==============================================================*/
+/*
+    <<====  VARIAVEIS DA SESSION STORAGE - PADRÃO ====>>
+    sessionStorage.urlPage    -> URL da pagina chamadora (para retorno)
+    sessionStorage.userLogado -> "S" se tem user logado
+    sessionStorage.userTipo   -> user que está lendo (google ou facebook)
+    sessionStorage.userNome   -> Nome do usuario que está lendo
+    sessionStorage.userImage  -> URL da imagem do usuario que está lendo
+    sessionStorage.userEmail  -> Enail do usuario que está lendo
 
-/*---------------------------*/
-function preparaPaginaLogin() {
-/*---------------------------*/
-    console.log("padr.js> *** Executando preparaPaginaLogin() ***");
+    <<====  VARIAVEIS DA SESSION STORAGE - EVANGELHO365 ====>>
+    sessionStorage.userLendo  -> "S" se usuario já estiver lendo (pula tela Benvindo)
+    sessionStorage.iniLeitur  -> data de inicio da Leitura
+    sessionStorage.arrayLidas -> array de Leituras Lidas
+*/
 
-
-};
-
-
-/*==============================================================
-                         PAGINA CONTATO
-==============================================================*/
-
-/*-----------------------------*/
-function preparaPaginaContato() {
-/*-----------------------------*/
-    console.log("padr.js> *** Executando preparaPaginaContato() ***");
-
-
-};
 
 
 /*==============================================================
                        Funções DIVERSAS
 ==============================================================*/
 
-
-/*----------------------*/
-function decodificaURL() {
-/*----------------------*/
+/*-------------------------*/
+function pd_decodificaURL() {
+/*-------------------------*/
     console.log("padr.js> *** Executando decodificaURL() ***");
 
     var vars = [], hash;
@@ -58,9 +48,9 @@ function decodificaURL() {
 };
 
 
-/*-------------------------------*/
-function validaString( textoVal ) {
-/*-------------------------------*/
+/*----------------------------------*/
+function pd_validaString( textoVal ) {
+/*----------------------------------*/
     console.log("padr.js> *** Executando validaString(" + textoVal + ") ***");
     var result = true;
 
@@ -83,9 +73,10 @@ function validaString( textoVal ) {
 };
 
 
-/*---------------------------*/
-function setaIconRetorno( urlDefault ) {
-/*---------------------------*/
+/*---------------------------------------*/
+function pd_setaIconRetorno( urlDefault ) {
+/*---------------------------------------*/
+
     if ( sessionStorage.urlPage === undefined || sessionStorage.urlPage === null || sessionStorage.urlPage === "" ) {
         $( "#id_iconRetorno" ).attr( "href", urlDefault ); 
         console.log("padr.js> setaIconRetorno: (urlPage undefined)" );
@@ -93,13 +84,17 @@ function setaIconRetorno( urlDefault ) {
         $( "#id_iconRetorno" ).attr( "href", sessionStorage.urlPage ); 
         console.log("padr.js> setaIconRetorno: " + sessionStorage.urlPage );
     };
+
 };
 
 
-/*---------------------*/
-function gravaUrlPage() {
-/*---------------------*/
+/*------------------------*/
+function pd_gravaUrlPage() {
+/*------------------------*/
+
     sessionStorage.urlPage = window.location.href;        // Returns full URL
     console.log("padr.js> sessionStorage.urlPage: " + sessionStorage.urlPage);
+
 };
+
 
