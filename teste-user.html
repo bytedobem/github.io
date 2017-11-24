@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <title>ByteDoBem - RESETAR</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- CSS do Bootstrap -->
+        <link rel="stylesheet" href="dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="dist/css/bootstrap-grid.min.css">
+        <link rel="stylesheet" href="dist/css/bootstrap-reboot.min.css">
+
+        <!-- Frameworks JS -->
+        <script src="dist/js/jquery.min.js"></script>
+        <script src="dist/js/popper.min.js"></script>
+        <script src="dist/js/bootstrap.min.js"></script>
+
+        <script src="js/padrao.js"></script>
+        <script src="software/evangelho365/js/evangelho365.js"></script>
+        <script src="software/evangelho365/js/persistencia.js"></script>
+        <script src="software/evangelho365/js/leitura.js"></script>
+
+        <script>
+
+            function gravaSession() {
+                ws_userTipo    = "google";
+                ws_userName    = "Nivaldo Hydalgo";
+                ws_userImage   = "image.png";
+                ws_userEmail   = "nivaldohydalgo@gmail.com";
+                var obj = pd_gravaUserLogadoSession();
+            };
+
+            function gravaUserNaSession() {
+                ev_userTipo    = "facebook";
+                ev_userName    = "Silvia Hydalgo";
+                ev_userImage   = "retrato.png";
+                ev_userEmail   = "csilviahydalgo@gmail.com";
+                var obj = pe_gravaUserLendoSession();
+            };
+
+        </script>
+
+  </head>
+  <body>
+
+  <div class="container">
+
+    <h6>Testa funções do UserLogado (padrão.js)</h6>
+
+    <p>
+        <button type="button" onclick="gravaSession();" class="btn btn-primary btn-block">
+            Executa gravaUserLogadoSession()
+        </button>
+    </p>
+    <p>
+        <button type="button" onclick="pd_recuperaUserLogadoSession();" class="btn btn-primary btn-block">
+            Executa recuperaUserLogadoSession()
+        </button>
+    </p>
+    <p>
+        <button type="button" onclick="pd_deletaUserLogadoSession();" class="btn btn-primary btn-block">
+            Executa deletaUserLogadoSession()
+        </button>
+    </p>
+    <p>
+        <button type="button" onclick="pd_geraJsonUserLogado();" class="btn btn-primary btn-block">
+            Executa geraJsonUserLogado()
+        </button>
+    </p>
+
+
+
+
+
+    <h6>Testa funções do UserLendo (evangelho365.js)</h6>
+
+    <p>
+        <button type="button" onclick="gravaUserNaSession();" class="btn btn-primary btn-block">
+            Executa gravaUserLendoSession()
+        </button>
+    </p>
+    <p>
+        <button type="button" onclick="pe_recuperaUserLendoSession();" class="btn btn-primary btn-block">
+            Executa recuperaUserLendoSession()
+        </button>
+    </p>
+    <p>
+        <button type="button" onclick="pe_deletaUserLendoSession();" class="btn btn-primary btn-block">
+            Executa deletaUserLendoSession()
+        </button>
+    </p>
+    <p>
+        <button type="button" onclick="pe_geraJsonUserLendo();" class="btn btn-primary btn-block">
+            Executa geraJsonUserLendo()
+        </button>
+    </p>
+
+    
+
+  </div>  
+  </body>
+</html> 

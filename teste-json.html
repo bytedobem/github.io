@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <title>ByteDoBem - RESETAR</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- CSS do Bootstrap -->
+        <link rel="stylesheet" href="../../dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../../dist/css/bootstrap-grid.min.css">
+        <link rel="stylesheet" href="../../dist/css/bootstrap-reboot.min.css">
+
+        <!-- Frameworks JS -->
+        <script src="../../dist/js/jquery.min.js"></script>
+        <script src="../../dist/js/popper.min.js"></script>
+        <script src="../../dist/js/bootstrap.min.js"></script>
+
+    <script>
+
+        function gravaSessionStorage() {
+            console.log("teste-json> *** Grava SessionStorage ***");
+            console.log("teste-json> sessionStorage.testeGrava(antes): " + sessionStorage.testeGrava);
+            var myObj = geraObjeto( "Nivaldo" , 52 , ["Palmital" , "Iepe" , "Brasilia"]);
+            var myJSON = JSON.stringify(myObj);
+            console.log("teste-json> myObj...........................: " + myObj);
+            console.log("teste-json> myJSON..........................: " + myJSON);
+            sessionStorage.testeGrava  = myJSON;
+            console.log("teste-json> sessionStorage.testeGrava(atual): " + sessionStorage.testeGrava);
+            console.log("teste-json> --------------------------------------------");
+        };
+
+        function listaSessionStorage() {
+            console.log("teste-json> *** Lista SessionStorage ***");
+            console.log("teste-json> sessionStorage.testeGrava(antes): " + sessionStorage.testeGrava);
+            try {
+                var obj = JSON.parse(sessionStorage.testeGrava); 
+                console.log("teste-json> obj.name........................: " + obj.name);
+                console.log("teste-json> obj.age.........................: " + obj.age);
+                console.log("teste-json> obj.city........................: " + obj.city);
+                console.log("teste-json> obj.city[1].....................: " + obj.city[1]);
+                console.log("teste-json> obj.city[3].....................: " + obj.city[3]);
+            }
+            catch(err) {
+                console.log("teste-json> err.message,....................: " + err.message);
+            };
+            console.log("teste-json> --------------------------------------------");
+        };
+
+        function limpaSessionStorage() {
+            console.log("teste-json> *** Limpa SessionStorage ***");
+            console.log("teste-json> sessionStorage.testeGrava(antes): " + sessionStorage.testeGrava);
+            sessionStorage.testeGrava  = undefined;
+            console.log("teste-json> sessionStorage.testeGrava(atual): " + sessionStorage.testeGrava);
+            console.log("teste-json> --------------------------------------------");
+        };
+
+        // -----------------------------------------------------
+        // -----------------------------------------------------
+
+        function gravaLocalStorage() {
+            console.log("teste-json> *** Grava LocalStorage ***");
+            console.log("teste-json> getItem (antes): " + localStorage.getItem("gravaLocal"));
+            var myObj = geraObjeto( "Nivaldo" , 52 , ["Palmital" , "Iepe" , "Brasilia"]);
+            var myJSON = JSON.stringify(myObj);
+            console.log("teste-json> myObj...........................: " + myObj);
+            console.log("teste-json> myJSON..........................: " + myJSON);
+            localStorage.setItem("gravaLocal", myJSON);
+            console.log("teste-json> getItem (atual): " + localStorage.getItem("gravaLocal"));
+            console.log("teste-json> --------------------------------------------");
+        };
+
+        function listaLocalStorage() {
+            console.log("teste-json> *** Lista LocalStorage ***");
+            console.log("teste-json> getItem (antes): " + localStorage.getItem("gravaLocal"));
+            try {
+                var obj = JSON.parse(localStorage.getItem("gravaLocal")); 
+                console.log("teste-json> obj.name........................: " + obj.name);
+                console.log("teste-json> obj.age.........................: " + obj.age);
+                console.log("teste-json> obj.city........................: " + obj.city);
+                console.log("teste-json> obj.city[1].....................: " + obj.city[1]);
+                console.log("teste-json> obj.city[3].....................: " + obj.city[3]);
+            }
+            catch(err) {
+                console.log("teste-json> err.message,....................: " + err.message);
+            };
+            console.log("teste-json> --------------------------------------------");
+        };
+
+        function deletaLocalStorage() {
+            console.log("teste-json> *** Deleta LocalStorage ***");
+            console.log("teste-json> getItem (antes): " + localStorage.getItem("gravaLocal"));
+            localStorage.removeItem("gravaLocal");
+            console.log("teste-json> getItem (atual): " + localStorage.getItem("gravaLocal"));
+            console.log("teste-json> --------------------------------------------");
+        };
+
+        function geraObjeto( nome , idade , arrayCidades ) {
+            console.log("teste-json> *** gerando Objeto ***");
+            return { "name": nome , "age": idade, "city": arrayCidades };
+        };
+
+        function testarNavegador() {
+            console.log("teste-json> *** testando Navegador ***");
+            if (typeof(Storage) !== "undefined") {
+                console.log("teste-json> Navegador suporta Session e Local Storage");
+                console.log("teste-json> --------------------------------------------");
+            } else {
+                console.log("teste-json> Navegador NAO suporta Session e Local Storage");
+                console.log("teste-json> --------------------------------------------");
+            }
+        };
+
+    </script>
+
+  </head>
+  <body>
+
+  <div class="container">
+
+    <h3>Teste Json na Session e na Local Storage</h3>
+    
+    <p>
+        <button type="button" onclick="gravaSessionStorage();" class="btn btn-primary btn-block">
+            Gravar SessionStorage
+        </button>
+    </p>
+
+    <p>
+        <button type="button" onclick="listaSessionStorage();" class="btn btn-primary btn-block">
+            Listar SessionStorage
+        </button>
+    </p>
+
+    <p>
+        <button type="button" onclick="limpaSessionStorage();" class="btn btn-primary btn-block">
+            Limpar SessionStorage
+        </button>
+    </p>
+
+    <br>
+
+    <p>
+        <button type="button" onclick="gravaLocalStorage();" class="btn btn-primary btn-block">
+            Gravar LocalStorage
+        </button>
+    </p>
+
+    <p>
+        <button type="button" onclick="listaLocalStorage();" class="btn btn-primary btn-block">
+            Listar LocalStorage
+        </button>
+    </p>
+
+    <p>
+        <button type="button" onclick="deletaLocalStorage();" class="btn btn-primary btn-block">
+            Deletar LocalStorage
+        </button>
+    </p>
+
+    <br>
+
+    <p>
+        <button type="button" onclick="testarNavegador();" class="btn btn-primary btn-block">
+            Testar Navegador
+        </button>
+    </p>
+
+    
+  </div>  
+  </body>
+</html> 

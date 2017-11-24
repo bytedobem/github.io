@@ -33,6 +33,10 @@ a.bg-navbar-bottom:focus, a.bg-navbar-bottom:hover {
     background-color: #0d47a1 !important;
 }
  
+.navbar-text {
+    font-weight: bold;
+}
+
 #id_iconRetorno {
     padding-right: 10px;
 }

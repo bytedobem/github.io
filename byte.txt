@@ -1,0 +1,93 @@
+
+
+**===================================================**
+**                    P A D R Ã O                    **  
+**===================================================**
+
+VARIAVEIS DE TRABALHO DO EVANGELHO365
+-------------------------------------
+
+    ws_userSession   ("S" ou "N")
+    ws_userTipo      ("google" ou "facebook")
+    ws_userNome
+    ws_userImage
+    ws_userEmail
+
+VARIAVEIS DA SESSION STORAGE
+----------------------------
+
+    sessionStorage.urlPage    -> URL da pagina chamadora (para retorno)
+    ----------------------
+
+        Funções:    gravaUrlPage() 
+                    recuperaUrlPage( urlDefault )
+
+    sessionStorage.userLogado -> Objeto do User Logado
+    -------------------------
+
+            userTipo    -> user que está lendo (google ou facebook)
+            userName    -> Nome do usuario que está lendo
+            userImage   -> URL da imagem do usuario que está lendo
+            userEmail   -> Enail do usuario que está lendo
+
+        Funções:    gravaUserLogadoSession()
+                    recuperaUserLogadoSession()
+                    deletaUserLogadoSession()
+                    geraJsonUserLogado()
+
+FUNCOES AUXILIARES
+------------------
+
+   decodificaURL()
+   validaString( textoVal )
+
+**===================================================**
+**            E V A N G E L H O    3 6 5             **  
+**===================================================**
+
+VARIAVEIS DE TRABALHO DO EVANGELHO365
+-------------------------------------
+
+    ev_userLendo    ("S" ou "N")
+    ev_userTipo     ("local" ou "google" ou "facebook")
+    ev_userNome
+    ev_userImage
+    ev_userEmail
+
+    ev_dtInicLeit
+    ev_arrayLidas
+    ev_arrayDatas
+
+VARIAVEIS DA SESSION STORAGE
+----------------------------
+
+    sessionStorage.userLendo  -> Objeto do User Lendo
+    ------------------------
+
+            userTipo  
+            userName  
+            userImage  
+            userEmail  
+    
+        Funções:    gravaUserLendoSession()
+                    recuperaUserLendoSession()
+                    deletaUserLendoSession()
+                    geraJsonUserLendo()
+
+VARIAVEIS DA LOCAL STORAGE
+--------------------------
+
+    leituraIniciada     -> Objeto da Leitura gravada no Aparelho
+    ---------------
+
+            dtInicLeit  -> data de inicio da Leitura
+            arrayLidas  -> array de Leituras Lidas
+    
+        Funções:    gravaLeituraIniciada()
+                    recuperaLeituraIniciada()
+                    deletaLeituraIniciada()
+                    geraJsonLeituraIniciada()
+
+FUNCOES AUXILIARES
+------------------
+
